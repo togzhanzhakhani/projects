@@ -27,11 +27,11 @@ make run
 
 ## Deployed on RENDER:
 
-Base URL: https://todo-list-2afx.onrender.com
+Base URL: https://projects-j02i.onrender.com
 
 ## API Endpoints
-### Users
-#### URL: /users
+## Users
+### URL: /users
 #### GET /users: Get a list of all users.
 #### POST /users: Create a new user.
 ### Request Body:
@@ -60,8 +60,8 @@ Base URL: https://todo-list-2afx.onrender.com
 #### GET /users/search?name={name}: Find users by name.
 #### GET /users/search?email={email}: Find users by email.
 
-### Projects
-#### URL: /projects
+## Projects
+### URL: /projects
 #### GET /projects: Get a list of all projects.
 #### POST /projects: Create a new project.
 ### Request Body:
@@ -92,3 +92,44 @@ Base URL: https://todo-list-2afx.onrender.com
 #### GET /projects/{id}/tasks: Get a list of tasks in a specific project.
 #### GET /projects/search?title={title}: Find projects by title.
 #### GET /projects/search?manager={userId}: Find projects by manager ID.
+
+## Tasks
+### URL: /tasks
+#### GET /tasks: Get a list of all tasks.
+#### POST /tasks: Create a new task.
+### Request Body:
+
+```sh
+{
+    "title": "Finish Report",
+    "description": "Complete the quarterly financial report",
+    "priority": "High",
+    "status": "InProgress",
+    "assignee_id": 3,
+    "project_id": 5,
+    "created_at": "2024-07-01",
+    "completed_at": "2024-07-15"
+}
+```
+#### GET /tasks/{id}: Get details of a specific task.
+#### PUT /tasks/{id}: Update details of a specific task.
+### Request Body:
+
+```sh
+{
+    "title": "Finish Report",
+    "description": "Complete the quarterly financial report and review",
+    "priority": "High",
+    "status": "Completed",
+    "assignee_id": 3,
+    "project_id": 5,
+    "created_at": "2024-07-01",
+    "completed_at": "2024-07-10"
+}
+```
+#### DELETE /tasks/{id}: Delete a specific task.
+#### GET /tasks/search?title={title}: Find tasks by title. specific project.
+#### GET /tasks/search?status={status}: Find tasks by status.
+#### GET /tasks/search?priority={priority}: Find tasks by priority.
+#### GET /tasks/search?assignee={userId}: Find tasks by assignee ID.
+#### GET /tasks/search?project={projectId}: Find tasks by project ID.
