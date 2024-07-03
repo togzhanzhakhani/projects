@@ -29,7 +29,7 @@ make run
 
 Base URL: https://projects-j02i.onrender.com
 
-## API Endpoints
+# API Endpoints
 ## Users
 ### URL: /users
 #### GET /users: Get a list of all users.
